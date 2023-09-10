@@ -22,4 +22,5 @@ Kelas   : PBP B
      * View: Komponen yang berfokus mengatur tampilan data kepada pengguna.
      * ViewModel: Komponen yang menjadi perantara antara Model dan View dan berisi logika yang mengatur data agar sesuai dengan yang akan ditampilkan di view.
        
-    Secara ringkas, perbedaan utamanya adalah ketiga pola desain ini memiliki komponen perantara yang berbeda-beda (controller, template, atau viewmodel) dan memiliki fokus utama yang berbeda-beda dalam pengembangan perangkat lunak.
+  
+   Secara ringkas, perbedaan utamanya adalah ketiga pola desain ini memiliki komponen perantara yang berbeda-beda (controller, template, atau viewmodel) dan memiliki fokus utama yang berbeda-beda dalam pengembangan perangkat lunak.
