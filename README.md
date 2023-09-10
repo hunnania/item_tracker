@@ -4,8 +4,9 @@ NPM     : 2206024392
 
 Kelas   : PBP B
 
-[Item Tracker App](https://item-tracker.adaptable.app/)
+[Item Tracker App](https://item-tracker.adaptable.app/main/)
 
 1. Checklist tersebut memudahkan saya dalam membuat aplikasi ini. Saya menjadi tahu dan mengingat kembali prosedur membuat aplikasi, mulai dari membuat direktori lokal sampai dengan men-deploy aplikasi melalui Adaptable. Saya juga menyesuaikan atribut aplikasinya sesuai dengan yang saya inginkan.
 2. s
-3. Virtual environment adalah alat yang membantu isolasi dependensi
+3. Virtual environment adalah alat yang membantu mengisolasi dependensi yang dibutuhkan proyek-proyek berbeda secara terpisah yang dibatasi dengan membuat lingkungan terisolasi. Virtual environment digunakan agar proyek kita tidak tumpang-tindih dengan proyek lainnya, menjaga proyek terorganisir, memudahkan pengelolaan versi paket-paket yang digunakan, meningkatkan keamanan proyek, dan memudahkan untuk membagikan proyek kita kepada orang lain. Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi tidak dianjurkan.
+4. 
