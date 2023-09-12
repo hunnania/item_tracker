@@ -15,6 +15,8 @@ Kelas   : PBP B
    - Mendefinisikan function dengan parameter request pada views.py
    - Mengatur dan mengonfigurasi routing url pada aplikasi main melalui urls.py
    - Melakukan testing melalui tests.py
+  
+     
 2. <img width="445" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/493c40e4-3c8d-4bec-aac3-571e2d6e58b8">
 3. Virtual environment adalah alat yang membantu mengisolasi dependensi yang dibutuhkan proyek-proyek berbeda secara terpisah yang dibatasi dengan membuat lingkungan terisolasi. Virtual environment digunakan agar proyek kita tidak tumpang-tindih dengan proyek lainnya, menjaga proyek terorganisir, memudahkan pengelolaan versi paket-paket yang digunakan, meningkatkan keamanan proyek, dan memudahkan untuk membagikan proyek kita kepada orang lain. Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment, tetapi tidak dianjurkan.
 4. - MVC (Model-View-Controller) adalah pola desain arsitektur yang umum digunakan dalam berbagai aplikasi. Komponen MVC terdiri dari:
