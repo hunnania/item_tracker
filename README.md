@@ -10,7 +10,32 @@ Kelas   : PBP B
    
 2. Utamanya, XML dan JSON digunakan untuk penyimpanan dan pengiriman data, sedangkan HTML untuk bagaimana kita akan menampilkan data tersebut. Lalu, perbedaan dari XML dan JSON adalah XML menggunakan tag untuk merepresentasikan datanya, sedangkan JSON menggunakan key dan value.
 
-3. 
+3. Pertama, JSON memiliki sintaks yang mudah dibaca oleh manusia. Kedua, kebanyakan bahasa pemrograman mendukung dalam pembuatan JSON. Ketiga, JSON memiliki ukuran yang lebih ringan. Keempat, format JSON sesuai dengan prinsip pembuatan dan pengembangan layanan web umumnya.
+
+4. - Membuat base.html sebagai template untuk halam web lainnya
+   - Membuat struktur form pada forms.py dan menambahkan field yang dibutuhkan untuk aplikasi saya.
+   - Membuat fungsi input_item yang akan menerima data saat user men-submit data dari form.
+   - Menambahkan path URL input-item pada urls.py
+   - Membuat tampilah laman input-item dengan input_item.html
+   - Membuat tabel yang dapat menampilkan data di aplikasi melalui main.html
+   - Membuat fungsi show_xml, show_json, show_xml_by_id, dan show_json_by_id pada views.py
+   - Menambahkan 4 path URL di urls.py untuk keempat fungsi yang baru ditambahkan pada views.py tersebut
+  
+5. - HTML
+     <img width="641" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/31dd0e04-39ed-425a-b071-ae6727a454e0">
+
+   - JSON
+     <img width="643" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/0260dc9e-6b44-4b2b-80f6-3f93118247ee">
+
+   - XML
+     <img width="637" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/30e5e9e6-17e3-4530-a5f3-5a7e6bfced49">
+
+   - JSON by ID
+     <img width="642" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/3264bdb6-1071-43ee-9674-678f9191d9ad">
+
+   - XML by ID
+     <img width="642" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/4655aa63-85eb-4e58-8a02-9d7d81c3db7e">
+
 ## TUGAS 2
 1. - Membuat direktori lokal bernama item tracker
    - Membuat repository di github bernama item_tracker
