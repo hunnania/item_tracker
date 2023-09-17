@@ -19,21 +19,21 @@ Kelas   : PBP B
    - Membuat tampilah laman input-item dengan input_item.html
    - Membuat tabel yang dapat menampilkan data di aplikasi melalui main.html
    - Membuat fungsi show_xml, show_json, show_xml_by_id, dan show_json_by_id pada views.py
-   - Menambahkan 4 path URL di urls.py untuk keempat fungsi yang baru ditambahkan pada views.py tersebut
+   - Menambahkan 4 path URL di urls.py untuk keempat fungsi yang baru ditambahkan pada views.py tersebut<br>
   
-5. - HTML
+5. - HTML<br>
      <img width="641" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/31dd0e04-39ed-425a-b071-ae6727a454e0">
 
-   - JSON
+   - JSON<br>
      <img width="643" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/0260dc9e-6b44-4b2b-80f6-3f93118247ee">
 
-   - XML
+   - XML<br>
      <img width="637" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/30e5e9e6-17e3-4530-a5f3-5a7e6bfced49">
 
-   - JSON by ID
+   - JSON by ID<br>
      <img width="642" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/3264bdb6-1071-43ee-9674-678f9191d9ad">
 
-   - XML by ID
+   - XML by ID<br>
      <img width="642" alt="image" src="https://github.com/hunnania/item_tracker/assets/119483290/4655aa63-85eb-4e58-8a02-9d7d81c3db7e">
 
 ## TUGAS 2
