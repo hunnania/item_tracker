@@ -4,8 +4,14 @@ NPM     : 2206024392
 
 Kelas   : PBP B
 
-[Item Tracker App](https://item-tracker.adaptable.app/main/)
+# [Item Tracker App](https://item-tracker.adaptable.app/main/)
+## TUGAS 3
+1. Pengiriman data dengan POST tidak dapat terlihat langsung di URL karena tidak terlihat pada tubuh HTTP, sedangkan dengan GET kita dapat melihat datanya pada URL. Kemudian, GET membatasi ukuran data yang dapat dikirim, sedangkan POST tidak sehingga POST lebih sering digunakan ketika ingin mengirim data berukuran kompleks. Jadi, untuk data yang akan mengubah sistem seperti mengubah sesuatu di database, sabaiknya menggunakan POST karena lebih aman.
+   
+2. Utamanya, XML dan JSON digunakan untuk penyimpanan dan pengiriman data, sedangkan HTML untuk bagaimana kita akan menampilkan data tersebut. Lalu, perbedaan dari XML dan JSON adalah XML menggunakan tag untuk merepresentasikan datanya, sedangkan JSON menggunakan key dan value.
 
+3. 
+## TUGAS 2
 1. - Membuat direktori lokal bernama item tracker
    - Membuat repository di github bernama item_tracker
    - Menyambungkan repository github dengan direktori lokal dan membuat branching
