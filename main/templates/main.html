@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Item Tracker</h1>
+    <h1>Jastip, Ya!</h1>
 
-    <h3>Hi! Let's track your item so you won't forget them :D</h3>
-    <h4>Owner: </h4>
+    <h2>Halo, {{ name }}!</h2>
+    <h3>Jangan lupa membeli barang-barang titipan costumer ini!</h3>
+    <!-- <h4>Jastiper: </h4>
     <p>{{ name }}</p>
-    <h4>Domicile: </h4>
-    <p>{{ class}}</p>
+    <h4>Domisili di Indonesia: </h4>
+    <p>{{ class }}</p> -->
 
-    <h2>Here's your item!</h2>
-
-    <table>
+    <table border="1">
         <tr>
             <th>Name</th>
             <th>Amount</th>
+            <th>Price per Item</th>
             <th>Description</th>
             <th>Date Added</th>
         </tr>
@@ -23,16 +23,24 @@
     
         {% for product in products %}
             <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.amount}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.date_added}}</td>
+                <td style="width: 300px; height: 20px;">{{product.name}}</td>
+                <td style="width: 100px; height: 20px;">{{product.amount}}</td>
+                <td style="width: 120px; height: 20px;">Rp{{product.price}}</td>
+                <td style="width: 300px; height: 20px;">{{product.description}}</td>
+                <td style="width: 120px; height: 20px;">{{product.date_added}}</td>
             </tr>
         {% endfor %}
     </table>
     
     <br />
     
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
+        </button>
+    </a>
+
     <a href="{% url 'main:input_item' %}">
         <button>
             Add New Product
