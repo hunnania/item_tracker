@@ -5,6 +5,34 @@ NPM     : 2206024392
 Kelas   : PBP B
 
 # [Item Tracker App](https://item-tracker.adaptable.app/main/)
+## TUGAS 4
+1. DJango UserCreationForm digunakan untuk membuat user untuk sebuah aplikasi web. UserCreationForm memiliki 3 atribut yaitu username, password1, dan password2 (digunakan untuk mengkonfirmasi password1).
+
+Kelebihan dari UserCreationForm:
+* Mudah digunakan karena ia merupakan formulir bawaan yang sudah bisa langsung dipakai
+* Ia bisa memvalidasi data yang di-input pengguna secara otomatis
+* Mudah untuk menyimpan data pengguna ke database
+
+Kekurangan:
+* Formulir yang tersedia cukup standar sehingga jika kita ingin atribut yang lebih kompleks, kita perlu merancangnya secara khusus sendiri
+* Tampilan standar sehingga jika kita ingin meningkatkan keestetikaannya, kita perlu membuat template tambahan
+* Ia bergantung pada model User bawaan Django sehingga ketika kita ingin menggunakan "User" kita sendiri, kita juga perlu menyesuaikannya pada UserCreationForm
+  
+2. Autentikasi adalah proses saat memverifikasi identitas user seperti username dan password. Setelah autentikasi selesai, dilanjutkan dengan proses otorisasi yaitu menentukan hal apa saja yang bisa dilakukan user pada web berdasarkan role user tersebut. Kedua proses tersebut sangat penting untuk keamanan, memastikan bahwa user yang bisa mengakses web adalah user yang telah terautentikasi. Kemudian, otorisasi memberikan kita kontrol terhadap hak akses aplikasi. Setelah itu, autentikasi juga memastikan user hanya bisa mengakses data-datanya sendiri, ini penting untuk privasi.
+
+3. Cookies adalah data berukuran kecil yang disimpan pada browser user pada periode waktu tertentu. Biasanya berisi informasi tentang aktivitas pengguna pada aplikasi web.
+  
+Django menggunakan cookies untuk menyimpan data sesi pengguna. Cookies sesi digunakan untuk menyimpan data sesi yang dapat diakses oleh server web setiap kali permintaan dari klien dikirim.
+
+4. Data cookies tidak berbahaya untuk aplikasi web itu sendiri. Akan tetapi, jika data-data pada cookies tersebut jatuh ke tangan yang salah, mereka dapat mengakses, mencuri, atau menyadap informasi-informasi pengguna yang bersifat privasi.
+   
+5. - Membuat function register, login_user, dan logout_user pada views.py
+   - Membuat tampilan halaman login dan register dengan html
+   - Menambahkan url-url untuk function yang sudah ditambahkan tadi pada urls.py
+   - Pada views.py, menambahkan @login_required sehingga setiap user perlu login terlebih dahulu
+   - Menghubungkan user dengan model dengan mengubah menjadi `products = Product.objects.filter(user=request.user)` dan `product.user = request.user` pada function input item
+   - Menambahkan `response.set_cookie('last_login', str(datetime.datetime.now()))` pada function login dan `last_login': request.COOKIES['last_login'],` pada show_main untuk menyimpan data login user pada cookies
+     
 ## TUGAS 3
 1. Pengiriman data dengan POST tidak dapat terlihat langsung di URL karena tidak terlihat pada tubuh HTTP, sedangkan dengan GET kita dapat melihat datanya pada URL. Kemudian, GET membatasi ukuran data yang dapat dikirim, sedangkan POST tidak sehingga POST lebih sering digunakan ketika ingin mengirim data berukuran kompleks. Jadi, untuk data yang akan mengubah sistem seperti mengubah sesuatu di database, sabaiknya menggunakan POST karena lebih aman.
    
