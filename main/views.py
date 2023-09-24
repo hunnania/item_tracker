@@ -12,8 +12,27 @@ import datetime
 
 # Create your views here.
 @login_required(login_url='/login')
-def show_main(request):
+def show_main(request, product_id=None, action=None):
     products = Product.objects.filter(user=request.user)
+
+    if request.method == "POST":
+        product_id = request.POST.get('product_id')
+        action = request.POST.get('action')
+
+        if action == 'increment':
+            product = Product.objects.get(id=product_id)
+            product.amount += 1
+            product.save()
+        elif action == 'decrement':
+            product = Product.objects.get(id=product_id)
+            if product.amount > 0:
+                product.amount -= 1
+                product.save()
+        elif action == 'delete':
+            product = Product.objects.get(id=product_id)
+            product.delete()
+
+        return redirect('main:show_main')
 
     context = {
         'name': request.user.username,

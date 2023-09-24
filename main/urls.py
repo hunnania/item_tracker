@@ -13,4 +13,8 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('main/increment/<int:product_id>/', show_main, {'action': 'increment'}, name='increment_amount'),
+    path('main/decrement/<int:product_id>/', show_main, {'action': 'decrement'}, name='decrement_amount'),
+    path('main/decrement/<int:product_id>/', show_main, {'action': 'decrement'}, name='decrement_amount'),
+    path('main/delete/<int:product_id>/', show_main, {'action': 'delete'}, name='delete_item'),
 ]
