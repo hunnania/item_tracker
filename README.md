@@ -5,6 +5,31 @@ NPM     : 2206024392
 Kelas   : PBP B
 
 # [Item Tracker App](https://item-tracker.adaptable.app/main/)
+## TUGAS 5
+1. - Element selector: Memilih semua elemen yang sejenis. Tepat untuk digunakan jika kita ingin mengaplikasikan style yang sama pada elemen tersebut di semua dokumen.
+   - Class selector: Memilih semua elemen yang berada di dalam class tersebut. Tepat untuk digunakan saat ingin mengubah semua elemen pada class tertentu.
+   - ID Selector: Memilih elemen yang memiliki ID tertentu. Karena ID bersifat unik pada satu halaman, tepat untuk digunakan jika kita hanya inginmengubah sebuah elemen secara spesifik.
+  
+2. - header, biasanya untuk bagian awal sebuah halaman/dokumen.
+   - div, biasanya digunakan sebagai wadah/kontainer untuk mengelompokkan elemen-elemen.
+   - p, digunakan untuk menandai teks yang bersifat paragraf.
+   - title, digunakan untuk memberi judul halaman.
+   - label, untuk menghubungkan teks/label dengan sebuah formulir/input area.
+
+3. Margin biasanya digunakan saat ingin mengatur jarak antar elemen sekitarnya, margin tidak dapat diisi oleh warna atau gambar, margin tidak memengaruhi tata letak elemen. Padding digunakan untuk mengatur jarak antara konten elemen dengan batas elemen itu sendiri, padding dapat diisi warna atau gambar, padding memengaruhi tata letak elemen.
+
+4. Tailwind umumnya digunakan untuk mengbuat/customize user interface, sedangkan bootstrap umumnya untuk membuat aplikasi responsif. Lalu, bootstrap memiliki banyak komponen desain yang sudah tersedia. Kemudian, bootstrap memiliki tampilan bawaan sehingga lebih konsisten, sedangkan tailwind tidak ada.
+
+Kita sebaiknya menggunakan Tailwind dibandingkan Bootstrap ketika proyek kita memerlukan banyak kostumisasi yang unik dan lebih terfokus pada front-end. Sebaliknya, kita sebaiknya menggunakan bootstrap dibandingkan tailwind jika proyek kita lebih banyak kerja pada back-end.
+
+5. - Saya memutuskan untuk menggunakan CSS dan mencari tutorial-tutorialnya di internet.
+   - Mencari desain login page yang saya sukai.
+   - Mulai mendesain login page menggunakan CSS dan diletakkan pada file html yang sama.
+   - Memilih palet warna, mengatur font, dan mengatur tata letak elemen
+   - Mendesain register page, lebih kurang mengikuti desain yang sudah dilakukan pada page login
+   - Mendesain main page dengan menambahkan navigation bar yang berisi nama aplikasi, tombol add item, dan tombol logout
+   - Mendesain card agar tampilan daftar item lebih menarik
+
 ## TUGAS 4
 1. DJango UserCreationForm digunakan untuk membuat user untuk sebuah aplikasi web. UserCreationForm memiliki 3 atribut yaitu username, password1, dan password2 (digunakan untuk mengkonfirmasi password1).
 
