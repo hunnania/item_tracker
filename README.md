@@ -17,7 +17,7 @@ Kelas   : PBP B
 4. Fetch API:
    - Fetch API adalah bagian dari spesifikasi JavaScript modern dan disertakan dalam semua browser modern
    - Promised-Based, kode lebih bersih dan mudah dipahami dalam menangani permintaan asynchronous.
-   - Fetch API lebih ringan karena tidak memerlukan pustaka eksternal seperti jQuery
+   - Fetch API lebih ringan karena tidak memerlukan pustaka eksternal seperti jQuery<br>
    jQuery:
    - jQuery merupakan pustaka JavaScript yang besar dan mencakup berbagai fungsi dan manajemen peristiwa selain AJAX sehingga memudahkan UI
    - jQuery lebih kompatibel untuk lintas browser, termasuk browser lama
