@@ -5,6 +5,30 @@ NPM     : 2206024392
 Kelas   : PBP B
 
 # [Item Tracker App](https://item-tracker.adaptable.app/main/)
+## TUGAS 6
+1. Synchronous programming akan menunggu suatu perintah selesai dikerjakan dahulu dan baru akan mengerjakan perintah selanjutnya secara berurutan, sedangkan asynchronous dapat melakukan perintah yang berbeda di waktu yang bersamaan/tidak harus menunggu perintah sebelumnya selesai.
+2. Maksud dari event-driven programming adalah sebuah program tidak akan langsung dijalankan dari awal hingga akhir, tetapi ia akan menunggu peristiwa/event dari pengguna, misalnya pengguna menekan tombol. Contohnya pada tugas ini adalah pada tombol "Add Item by AJAX" ditekan oleh pengguna, tombol akan memanggil fungsi addProduct() dan menjalankan kode yang ada di dalam blok fungsi yang dipanggil.
+3. Penerapan asynchronous pada AJAX:
+   - Permintaan data dari server (request) secara asynchronous agar server tetap responsif sembari menunggu data
+   - Fungsi Callback yang menangani data yang diterima dari server dan menjalankan kode yang sesuai dengan data
+   - Event Handling, AJAX menggunakan peristiwa (events) untuk menangani hasil permintaan
+   - XMLHttpRequest Object atau metode seperti `fetch` untuk membuat permintaan ke server
+   - Async/Await. `async` dapat mengembalikan nilai secara asinkronus dan `await` menunggu hasil dari fungsi `async`
+4. Fetch API:
+   - Fetch API adalah bagian dari spesifikasi JavaScript modern dan disertakan dalam semua browser modern
+   - Promised-Based, kode lebih bersih dan mudah dipahami dalam menangani permintaan asynchronous.
+   - Fetch API lebih ringan karena tidak memerlukan pustaka eksternal seperti jQuery
+   jQuery:
+   - jQuery merupakan pustaka JavaScript yang besar dan mencakup berbagai fungsi dan manajemen peristiwa selain AJAX sehingga memudahkan UI
+   - jQuery lebih kompatibel untuk lintas browser, termasuk browser lama
+  
+   Menurut saya, jika kita membuat aplikasi modern yang ditujukan untuk browser modern lebih baik menggunakan Fetch API, sedangkan jika kita membuat aplikasi yang memerlukan UI yang kompleks dan banyak atau perlu didukung browser lama lebih baik menggunakan jQuery.
+5. - Menambahkan fungsi `get_product_json` dan `add_product_ajax` pada views.py
+   - Melakukan routing pada fungsi baru tersebut di urls.py
+   - Menambahkan fungsi-fungsi JavaScript pada main.html seperti `getProducts()` untuk mengambil semua data server, `refreshProduct()` untuk menampilkan data menggunakan AJAX, dan `addProduct()` untuk menambahkan data dengan AJAX
+   - Membuat form modal yang digunakan untuk menambahkan item menggunakan AJAX
+   - Menambahkan tombol `Add Item by AJAX` pada navbar
+     
 ## TUGAS 5
 1. - Element selector: Memilih semua elemen yang sejenis. Tepat untuk digunakan jika kita ingin mengaplikasikan style yang sama pada elemen tersebut di semua dokumen.
    - Class selector: Memilih semua elemen yang berada di dalam class tersebut. Tepat untuk digunakan saat ingin mengubah semua elemen pada class tertentu.
