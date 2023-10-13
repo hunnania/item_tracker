@@ -4,7 +4,58 @@ NPM     : 2206024392
 
 Kelas   : PBP B
 
-# [Item Tracker App](https://item-tracker.adaptable.app/main/)
+# [Jastipin Aja!](http://alifa-hanania-tugas.pbp.cs.ui.ac.id)
+## TUGAS 6
+1. Synchronous programming akan menunggu suatu perintah selesai dikerjakan dahulu dan baru akan mengerjakan perintah selanjutnya secara berurutan, sedangkan asynchronous dapat melakukan perintah yang berbeda di waktu yang bersamaan/tidak harus menunggu perintah sebelumnya selesai.
+2. Maksud dari event-driven programming adalah sebuah program tidak akan langsung dijalankan dari awal hingga akhir, tetapi ia akan menunggu peristiwa/event dari pengguna, misalnya pengguna menekan tombol. Contohnya pada tugas ini adalah pada tombol "Add Item by AJAX" ditekan oleh pengguna, tombol akan memanggil fungsi addProduct() dan menjalankan kode yang ada di dalam blok fungsi yang dipanggil.
+3. Penerapan asynchronous pada AJAX:
+   - Permintaan data dari server (request) secara asynchronous agar server tetap responsif sembari menunggu data
+   - Fungsi Callback yang menangani data yang diterima dari server dan menjalankan kode yang sesuai dengan data
+   - Event Handling, AJAX menggunakan peristiwa (events) untuk menangani hasil permintaan
+   - XMLHttpRequest Object atau metode seperti `fetch` untuk membuat permintaan ke server
+   - Async/Await. `async` dapat mengembalikan nilai secara asinkronus dan `await` menunggu hasil dari fungsi `async`
+4. Fetch API:
+   - Fetch API adalah bagian dari spesifikasi JavaScript modern dan disertakan dalam semua browser modern
+   - Promised-Based, kode lebih bersih dan mudah dipahami dalam menangani permintaan asynchronous.
+   - Fetch API lebih ringan karena tidak memerlukan pustaka eksternal seperti jQuery
+
+   jQuery:
+   - jQuery merupakan pustaka JavaScript yang besar dan mencakup berbagai fungsi dan manajemen peristiwa selain AJAX sehingga memudahkan UI
+   - jQuery lebih kompatibel untuk lintas browser, termasuk browser lama
+  
+   Menurut saya, jika kita membuat aplikasi modern yang ditujukan untuk browser modern lebih baik menggunakan Fetch API, sedangkan jika kita membuat aplikasi yang memerlukan UI yang kompleks dan banyak atau perlu didukung browser lama lebih baik menggunakan jQuery.
+5. - Menambahkan fungsi `get_product_json` dan `add_product_ajax` pada views.py
+   - Melakukan routing pada fungsi baru tersebut di urls.py
+   - Menambahkan fungsi-fungsi JavaScript pada main.html seperti `getProducts()` untuk mengambil semua data server, `refreshProduct()` untuk menampilkan cards menggunakan AJAX, dan `addProduct()` untuk menambahkan data dengan AJAX
+   - Membuat form modal yang digunakan untuk menambahkan item menggunakan AJAX
+   - Menambahkan tombol `Add Item by AJAX` pada navbar
+   - Melakukan perintah collectstatic
+     
+## TUGAS 5
+1. - Element selector: Memilih semua elemen yang sejenis. Tepat untuk digunakan jika kita ingin mengaplikasikan style yang sama pada elemen tersebut di semua dokumen.
+   - Class selector: Memilih semua elemen yang berada di dalam class tersebut. Tepat untuk digunakan saat ingin mengubah semua elemen pada class tertentu.
+   - ID Selector: Memilih elemen yang memiliki ID tertentu. Karena ID bersifat unik pada satu halaman, tepat untuk digunakan jika kita hanya inginmengubah sebuah elemen secara spesifik.
+  
+2. - header, biasanya untuk bagian awal sebuah halaman/dokumen.
+   - div, biasanya digunakan sebagai wadah/kontainer untuk mengelompokkan elemen-elemen.
+   - p, digunakan untuk menandai teks yang bersifat paragraf.
+   - title, digunakan untuk memberi judul halaman.
+   - label, untuk menghubungkan teks/label dengan sebuah formulir/input area.
+
+3. Margin biasanya digunakan saat ingin mengatur jarak antar elemen sekitarnya, margin tidak dapat diisi oleh warna atau gambar, margin tidak memengaruhi tata letak elemen. Padding digunakan untuk mengatur jarak antara konten elemen dengan batas elemen itu sendiri, padding dapat diisi warna atau gambar, padding memengaruhi tata letak elemen.
+
+4. Tailwind umumnya digunakan untuk mengbuat/customize user interface, sedangkan bootstrap umumnya untuk membuat aplikasi responsif. Lalu, bootstrap memiliki banyak komponen desain yang sudah tersedia. Kemudian, bootstrap memiliki tampilan bawaan sehingga lebih konsisten, sedangkan tailwind tidak ada.
+
+Kita sebaiknya menggunakan Tailwind dibandingkan Bootstrap ketika proyek kita memerlukan banyak kostumisasi yang unik dan lebih terfokus pada front-end. Sebaliknya, kita sebaiknya menggunakan bootstrap dibandingkan tailwind jika proyek kita lebih banyak kerja pada back-end.
+
+5. - Saya memutuskan untuk menggunakan CSS dan mencari tutorial-tutorialnya di internet.
+   - Mencari desain login page yang saya sukai.
+   - Mulai mendesain login page menggunakan CSS dan diletakkan pada file html yang sama.
+   - Memilih palet warna, mengatur font, dan mengatur tata letak elemen
+   - Mendesain register page, lebih kurang mengikuti desain yang sudah dilakukan pada page login
+   - Mendesain main page dengan menambahkan navigation bar yang berisi nama aplikasi, tombol add item, dan tombol logout
+   - Mendesain card agar tampilan daftar item lebih menarik
+
 ## TUGAS 4
 1. DJango UserCreationForm digunakan untuk membuat user untuk sebuah aplikasi web. UserCreationForm memiliki 3 atribut yaitu username, password1, dan password2 (digunakan untuk mengkonfirmasi password1).
 
