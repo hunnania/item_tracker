@@ -1,38 +1,20 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseNotFound, HttpResponseRedirect, HttpResponse
 from django.core import serializers
 from django.urls import reverse
 from django.contrib import messages  
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from main.forms import ProductForm
 from main.models import Product
 import datetime
 
 # Create your views here.
 @login_required(login_url='/login')
-def show_main(request, product_id=None, action=None):
+def show_main(request):
     products = Product.objects.filter(user=request.user)
-
-    if request.method == "POST":
-        product_id = request.POST.get('product_id')
-        action = request.POST.get('action')
-
-        if action == 'increment':
-            product = Product.objects.get(id=product_id)
-            product.amount += 1
-            product.save()
-        elif action == 'decrement':
-            product = Product.objects.get(id=product_id)
-            if product.amount > 0:
-                product.amount -= 1
-                product.save()
-        elif action == 'delete':
-            product = Product.objects.get(id=product_id)
-            product.delete()
-
-        return redirect('main:show_main')
 
     context = {
         'name': request.user.username,
@@ -41,6 +23,27 @@ def show_main(request, product_id=None, action=None):
     }
 
     return render(request, "main.html", context)
+
+def increment(request, id):
+    product = Product.objects.get(pk=id)
+    product.amount += 1
+    product.save()
+    response = HttpResponseRedirect(reverse("main:show_main"))
+    return response
+
+def decrement(request, id):
+    product = Product.objects.get(pk=id)
+    if product.amount > 0:
+        product.amount += 1
+        product.save()
+    response = HttpResponseRedirect(reverse("main:show_main"))
+    return response
+
+def delete (request, id):
+    product = Product.objects.get(pk=id)
+    product.delete()
+    response = HttpResponseRedirect(reverse("main:show_main"))
+    return response
 
 def input_item(request):
     form = ProductForm(request.POST or None)
@@ -102,3 +105,23 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def get_product_json(request):
+    product_item = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        user = request.user
+
+        new_product = Product(name=name, amount=amount, price=price, description=description, user=user)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()

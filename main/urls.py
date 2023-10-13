@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import show_json, show_json_by_id, show_main, input_item, show_xml, show_xml_by_id, register, login_user, logout_user
+from main.views import add_product_ajax, decrement, delete, get_product_json, increment, show_json, show_json_by_id, show_main, input_item, show_xml, show_xml_by_id, register, login_user, logout_user
 
 app_name = 'main'
 
@@ -13,8 +13,9 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
-    path('main/increment/<int:product_id>/', show_main, {'action': 'increment'}, name='increment_amount'),
-    path('main/decrement/<int:product_id>/', show_main, {'action': 'decrement'}, name='decrement_amount'),
-    path('main/decrement/<int:product_id>/', show_main, {'action': 'decrement'}, name='decrement_amount'),
-    path('main/delete/<int:product_id>/', show_main, {'action': 'delete'}, name='delete_item'),
+    path('increment/<int:id>/', increment, name='increment_amount'),
+    path('decrement/<int:id>/', decrement, name='decrement_amount'),
+    path('delete/<int:id>/', delete, name='delete_item'),
+    path('get-product/', get_product_json, name='get_product_json'),
+    path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
 ]

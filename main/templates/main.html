@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+    <title>Jastipin Aja!</title>
+{% endblock meta %}
 {% block content %}
 
 <style>
@@ -13,7 +16,6 @@
         font-family: "Poppins";
     }
     h5 {
-        /* margin-left: 110px; */
         text-align: center;
     }
     .page-container {
@@ -34,7 +36,8 @@
         float: left;
     }
     li .logout:hover, .item:hover {
-        background-color: #4e463c;
+        /* background-color: #4e463c; */
+        color: rgb(255, 235, 144);
     }
     li .active {
         background-color: #6f816e;
@@ -65,16 +68,18 @@
         border-radius: 5px;
         background: white;
         text-align: center;
-        padding: 20px;
+        padding: 10px;
         margin-bottom: 20px;
-        max-width: calc(33.33% - 20px);
     }
     .container .box-container .box h3 {
         font-size: 20px;
         margin-bottom: 1px;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #065300;
     }
     .container .box-container .box p {
-        font-size: 1rem;    
+        font-size: 15px;    
         color: #333;
     }
     .container .box-container .box #price {
@@ -84,24 +89,26 @@
     .container .box-container .box #date {
         font-size: 12px;
     }
-    .button-before,
-    .button-after {
-        background-color: #4CAF50;
+    #dec-button,
+    #inc-button {
+        background-color: #ABC4AA;
         color: white;
         border: none;
-        padding: 10px 20px;
+        padding: 3px 10px;
         text-align: center;
         text-decoration: none;
+        border-radius: 30px;
         display: inline-block;
         font-size: 16px;
         margin: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
     .container .box-container .box .amount-container {
         text-align: center;
     }
-
     #delete-button {
+        cursor: pointer;
         font-family: "Poppins";
         width: 70%;
         height: 30px;
@@ -113,8 +120,25 @@
         border-color: #ABC4AA;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
-    #delete-button:hover {
+    #delete-button:hover,
+    #dec-button:hover,
+    #inc-button:hover {
         background: #94ab93;
+    }
+    .btn-primary,
+    .btn-secondary {
+        cursor: pointer;
+        font-family: "Poppins";
+        text-align: center;
+        width: 40%;
+        height: 30px;
+        margin-top: 5%;
+        border: 1px solid;
+        background: #ABC4AA;
+        border-radius: 25px;
+        font-size: 17px;
+        border-color: #ABC4AA;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
 
 </style>
@@ -122,54 +146,101 @@
     <ul>
         <li><a class="active">Jastipin Aja!</a></li>
         <li><a class="item" href="{% url 'main:input_item' %}">Add Item</a></li>
+        <li><a type="button" class="item" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item by AJAX</a></li>
         <li><a class="logout" href="{% url 'main:logout' %}">Logout</a></li>
     </ul>
     <div class = "container">
         <h2 class="desc">Halo, {{ name }}!</h2>
         <h2 class="desc">Jangan lupa membeli barang-barang titipan customer ini!</h2>
     
-        {% for product in products %}
-            <div class="box-container">
-                <div class="box">
-                    <p id="date">{{product.date_added}}</p>
-                    <h3>{{product.name}}</h3>
-                    <p>{{product.description}}</p>
-                    <p id="price">Rp{{product.price}}</p>
-
-                    <div class="amount-container">
-                        <form method="post" action="{% url 'main:decrement_amount' product.id %}" style="display: inline-block;">
+        <div class="box-container" id="item-container"></div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
                             {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{ product.id }}">
-                            <input type="hidden" name="action" value="decrement">
-                            <button id="amt-button" type="submit">-</button>
-                        </form>
-                        <p>{{product.amount}}</p>
-                        <form method="post" action="{% url 'main:increment_amount' product.id %}" style="display: inline-block;">
-                            {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{ product.id }}">
-                            <input type="hidden" name="action" value="increment">
-                            <button id="amt-button" type="submit">+</button>
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="col-form-label">Amount:</label>
+                                <input type="number" class="form-control" id="number" name="amount"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="price" name="price"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
                         </form>
                     </div>
-
-                    <td style="text-align: center;">
-                        <form method="post" action="{% url 'main:delete_item' product.id %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{ product.id }}">
-                            <input type="hidden" name="action" value="delete">
-                            <button id="delete-button" type="submit">Delete Item</button>
-                        </form>
-                    </td>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            </div>   
+        </div> 
     </div>
-
-    <br />
-
     <h5>Sesi terakhir login: {{ last_login }}</h5>
+
 </div>
 
+<script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+    
+    async function refreshProduct() {
+        document.getElementById("item-container").innerHTML = ""
+        const products = await getProducts()
 
+        let htmlString = ``
+        products.forEach((product) => {
+            htmlString += `\n
+                <div class="box">
+                    <p id="date">${product.fields.date_added}</p>
+                    <h3>${product.fields.name}</h3>
+                    <p>${product.fields.description}</p>
+                    <p id="price">Rp${product.fields.price}</p>
+                    <div class="amount-container">
+                        <a href="decrement/${product.pk}/">
+                            <button id="dec-button">-</button>
+                        </a>
+                        <p>Jumlah: ${product.fields.amount}</p>
+                        <a href="increment/${product.pk}/">
+                            <button id="inc-button">+</button>
+                        </a>
+                    </div>
+                    <a href="delete/${product.pk}/">
+                        <button id="delete-button">Delete</button>
+                    </a>
+                </div>
+            `;
+        })
+        // Tambahkan kartu produk ke kontainer produk
+        document.getElementById("item-container").innerHTML = htmlString
+    }
+
+    refreshProduct()
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProduct)
+
+        document.getElementById("form").reset()
+        return false
+    }
+    document.getElementById("button_add").onclick = addProduct
+</script>
 
 {% endblock content %}
