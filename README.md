@@ -4,7 +4,7 @@ NPM     : 2206024392
 
 Kelas   : PBP B
 
-# [Item Tracker App](https://item-tracker.adaptable.app/main/)
+# [Jastipin Aja!](http://alifa-hanania-tugas.pbp.cs.ui.ac.id)
 ## TUGAS 6
 1. Synchronous programming akan menunggu suatu perintah selesai dikerjakan dahulu dan baru akan mengerjakan perintah selanjutnya secara berurutan, sedangkan asynchronous dapat melakukan perintah yang berbeda di waktu yang bersamaan/tidak harus menunggu perintah sebelumnya selesai.
 2. Maksud dari event-driven programming adalah sebuah program tidak akan langsung dijalankan dari awal hingga akhir, tetapi ia akan menunggu peristiwa/event dari pengguna, misalnya pengguna menekan tombol. Contohnya pada tugas ini adalah pada tombol "Add Item by AJAX" ditekan oleh pengguna, tombol akan memanggil fungsi addProduct() dan menjalankan kode yang ada di dalam blok fungsi yang dipanggil.
