@@ -26,9 +26,10 @@ Kelas   : PBP B
    Menurut saya, jika kita membuat aplikasi modern yang ditujukan untuk browser modern lebih baik menggunakan Fetch API, sedangkan jika kita membuat aplikasi yang memerlukan UI yang kompleks dan banyak atau perlu didukung browser lama lebih baik menggunakan jQuery.
 5. - Menambahkan fungsi `get_product_json` dan `add_product_ajax` pada views.py
    - Melakukan routing pada fungsi baru tersebut di urls.py
-   - Menambahkan fungsi-fungsi JavaScript pada main.html seperti `getProducts()` untuk mengambil semua data server, `refreshProduct()` untuk menampilkan data menggunakan AJAX, dan `addProduct()` untuk menambahkan data dengan AJAX
+   - Menambahkan fungsi-fungsi JavaScript pada main.html seperti `getProducts()` untuk mengambil semua data server, `refreshProduct()` untuk menampilkan cards menggunakan AJAX, dan `addProduct()` untuk menambahkan data dengan AJAX
    - Membuat form modal yang digunakan untuk menambahkan item menggunakan AJAX
    - Menambahkan tombol `Add Item by AJAX` pada navbar
+   - Melakukan perintah collectstatic
      
 ## TUGAS 5
 1. - Element selector: Memilih semua elemen yang sejenis. Tepat untuk digunakan jika kita ingin mengaplikasikan style yang sama pada elemen tersebut di semua dokumen.
