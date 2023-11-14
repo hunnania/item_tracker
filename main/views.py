@@ -34,7 +34,7 @@ def increment(request, id):
 def decrement(request, id):
     product = Product.objects.get(pk=id)
     if product.amount > 0:
-        product.amount += 1
+        product.amount -= 1
         product.save()
     response = HttpResponseRedirect(reverse("main:show_main"))
     return response
