@@ -160,3 +160,5 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
     'access-control-allow-origin',
 ]
+
+CSRF_TRUSTER_ORIGIN = ["https://alifa-hanania-tugas.pbp.cs.ui.ac.id"]
